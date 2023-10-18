@@ -1,0 +1,17 @@
+# golang app
+version: '3.7'
+services:
+  app:
+    container_name: "mytodo"
+    image: golang:1.19.3
+    command: go run cmd/api/main.go
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - ${EXTERNAL_PORT}:${APP_PORT}
+    logging:
+      options:
+        max-size: "1m"
+        max-file: "1"
