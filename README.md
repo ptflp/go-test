@@ -58,7 +58,8 @@ ptflp@nazarick task1 % ./task1 -n 1
 - Не используй NBSP (non-breaking space), вместо него используйте обычный пробел
 
 ### Доп материалы:
-- https://golangify.com/go/filesystem
+- [Работа с файловой системой](https://golangify.com/go/filesystem)
+- [Рекурсия](https://gobyexample.com.ru/recursion)
 
 ## Задача 2. Todo list
 
