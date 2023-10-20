@@ -7,14 +7,6 @@ import (
 	"sync"
 )
 
-type TodoStorager interface {
-	Create(ctx context.Context, todo *entity.Todo) error
-	GetAll(ctx context.Context) ([]*entity.Todo, error)
-	Delete(ctx context.Context, id int) error
-	Update(ctx context.Context, todo *entity.Todo) error
-	GetByID(ctx context.Context, id int) (*entity.Todo, error)
-}
-
 type InMemory struct {
 	unimplemented
 	data []*entity.Todo

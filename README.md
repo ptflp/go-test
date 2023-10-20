@@ -144,7 +144,14 @@ func NewSqliteTodo() TodoStorager {
 	return &SqliteTodo{db: db}
 }
 
-// Дописать методы
+// Дописать методы согласно интерфейсу TodoStorager
+type TodoStorager interface {
+    Create(ctx context.Context, todo *entity.Todo) error
+    GetAll(ctx context.Context) ([]*entity.Todo, error)
+    Delete(ctx context.Context, id int) error
+    Update(ctx context.Context, todo *entity.Todo) error
+    GetByID(ctx context.Context, id int) (*entity.Todo, error)
+}
 ```
 
 ### Критерии приемки

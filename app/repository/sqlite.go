@@ -1,9 +1,19 @@
 package repository
 
 import (
+	"context"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"
+	"github.com/ptflp/go-test/app/entity"
 )
+
+type TodoStorager interface {
+	Create(ctx context.Context, todo *entity.Todo) error
+	GetAll(ctx context.Context) ([]*entity.Todo, error)
+	Delete(ctx context.Context, id int) error
+	Update(ctx context.Context, todo *entity.Todo) error
+	GetByID(ctx context.Context, id int) (*entity.Todo, error)
+}
 
 type SqliteTodo struct {
 	unimplemented
